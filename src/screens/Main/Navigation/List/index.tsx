@@ -21,10 +21,9 @@ type ListProps = {
       board: any[]
     }
   }
-  setData: React.Dispatch<React.SetStateAction<any>>
 }
 
-const List: React.FC<ListProps> = ({ data, setData }) => {
+const List: React.FC<ListProps> = ({ data }) => {
   const [selected, setSelected] = useState<string>('all')
   const handleItem = (item: string) => {
     setSelected(item)
