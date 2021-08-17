@@ -1,16 +1,8 @@
-import { Avatar, AvatarGroup, Box, Flex, Heading, Text } from '@chakra-ui/react'
+import { Avatar, Box, Flex, Heading } from '@chakra-ui/react'
 
-import { MembersProps, TeamProps } from './types'
+import { UserProps } from './types'
 
-const Team: React.FC<TeamProps> = ({
-  team,
-  total,
-  img,
-  members,
-  bg,
-  onClick,
-  active,
-}) => {
+const User: React.FC<UserProps> = ({ name, img, bg, onClick, active }) => {
   const bgColor = active ? '#1a202c' : bg
   const txtColor = active ? 'white' : 'black'
   return (
@@ -27,7 +19,7 @@ const Team: React.FC<TeamProps> = ({
         d="flex"
         justifyContent="center"
         alignItems="center">
-        <Avatar name={team} w="45px" h="45px" src={img} />
+        <Avatar name={name} w="45px" h="45px" src={img} />
       </Box>
       <Box
         flex={{ base: '16', md: '18' }}
@@ -35,17 +27,11 @@ const Team: React.FC<TeamProps> = ({
         flexDir="column"
         justifyContent="center">
         <Heading fontSize="13px" mb="10px" color={txtColor} noOfLines={1}>
-          {team}
+          {name}
         </Heading>
-        <AvatarGroup size="sm">
-          {members.map((m: MembersProps, index: number) => {
-            return <Avatar key={`${index + 1}`} name={m.name} src={m.img} />
-          })}
-        </AvatarGroup>
-        <Text fontSize="13px">Total projects : {total} </Text>
       </Box>
     </Flex>
   )
 }
 
-export default Team
+export default User

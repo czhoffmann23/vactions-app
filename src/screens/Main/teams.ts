@@ -1,8 +1,10 @@
 const TEAMS_MOCKS = [
   {
-    project: 'GRAVITY',
+    team: 'GRAVITY',
     img: 'https://via.placeholder.com/150',
-    bg: '#CEE8CB',
+    bg: '#7928ca26',
+    total: 3,
+    active: false,
     members: [
       {
         name: 'Name 1',
@@ -23,9 +25,11 @@ const TEAMS_MOCKS = [
     ],
   },
   {
-    project: 'SUPER NOVA',
+    team: 'SUPER NOVA',
     img: 'https://via.placeholder.com/150',
-    bg: '#CBE2E8',
+    bg: '#7928ca26',
+    total: 2,
+    active: false,
     members: [
       {
         name: 'Name 1',
@@ -46,9 +50,11 @@ const TEAMS_MOCKS = [
     ],
   },
   {
-    project: 'APOLLO 11',
+    team: 'APOLLO 11',
     img: 'https://via.placeholder.com/150',
-    bg: '#E8DFCB',
+    bg: '#7928ca26',
+    total: 3,
+    active: false,
     members: [
       {
         name: 'Name 1',

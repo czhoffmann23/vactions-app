@@ -1,9 +1,9 @@
 import { Team } from 'components/Cards'
 
-import { TeamsData, TeamsProps } from './types'
+import { TeamsData, TeamsProps } from '../../../types'
 
 const Teams: React.FC<TeamsProps> = ({ onClick, data }) => {
-  const handleOnClick = (type: number, id: string) => {
+  const handleOnClick = (type: string, id: string) => {
     onClick(type, id)
   }
   return (
@@ -15,9 +15,11 @@ const Teams: React.FC<TeamsProps> = ({ onClick, data }) => {
             img={t.img}
             bg={t.bg}
             members={t.members}
-            project={t.project}
+            total={t.total}
+            active={t.active}
+            team={t.team}
             onClick={() => {
-              handleOnClick(2, ` ${index}`)
+              handleOnClick('team', ` ${index}`)
             }}
           />
         )

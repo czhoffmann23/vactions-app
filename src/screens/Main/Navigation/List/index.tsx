@@ -3,36 +3,25 @@ import { Box } from '@chakra-ui/react'
 
 import { TabHeader, TabItem, TabList, Tabs } from 'components/Tabs'
 
+import { DataType, ListProps } from '../../types'
+
 import Projects from './Projects'
 import Teams from './Teams'
+import Users from './Users'
 
-type ListProps = {
-  data: {
-    all: {
-      data: any[]
-      board: any[]
-    }
-    team: {
-      data: any[]
-      board: any[]
-    }
-    users: {
-      data: any[]
-      board: any[]
-    }
-  }
-}
-
-const List: React.FC<ListProps> = ({ data }) => {
+const List: React.FC<ListProps> = ({ data, setData }) => {
   const [selected, setSelected] = useState<string>('all')
   const handleItem = (item: string) => {
     setSelected(item)
   }
 
-  const handleCardClicked = (type: number, id: string) => {
-    console.log('type', type)
-    console.log('card clicked data', data)
-    console.log('id', id)
+  const handleCardClicked = (type: string, id: string) => {
+    const tempData = { ...data }
+    const actualType = type as DataType
+    const actualId = parseInt(id)
+    tempData[actualType].data[actualId].active =
+      !tempData[actualType].data[actualId].active
+    setData(tempData)
   }
 
   const renderList = () => {
@@ -40,7 +29,7 @@ const List: React.FC<ListProps> = ({ data }) => {
       return <Projects onClick={handleCardClicked} data={data.all.data} />
     else if (selected === 'team')
       return <Teams onClick={handleCardClicked} data={data.team.data} />
-    else return 'Users'
+    else return <Users onClick={handleCardClicked} data={data.users.data} />
   }
 
   return (

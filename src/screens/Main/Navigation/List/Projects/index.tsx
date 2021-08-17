@@ -1,23 +1,24 @@
 import { Project } from 'components/Cards'
 
-import { ProjectsProps,TeamsData } from './types'
+import { AllData, ProjectsProps } from '../../../types'
 
 const Projects: React.FC<ProjectsProps> = ({ onClick, data }) => {
-  const handleOnClick = (type: number, id: string) => {
+  const handleOnClick = (type: string, id: string) => {
     onClick(type, id)
   }
   return (
     <>
-      {data.map((t: TeamsData, index: number) => {
+      {data.map((p: AllData, index: number) => {
         return (
           <Project
             key={`${index + 1}`}
-            img={t.img}
-            bg={t.bg}
-            members={t.members}
-            project={t.project}
+            img={p.img}
+            bg={p.bg}
+            active={p.active}
+            members={p.members}
+            project={p.project}
             onClick={() => {
-              handleOnClick(1, ` ${index}`)
+              handleOnClick('all', ` ${index}`)
             }}
           />
         )
