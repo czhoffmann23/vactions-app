@@ -2,7 +2,8 @@ const PROJECTS_MOCKS = [
   {
     project: 'PROJECT 1',
     img: 'https://via.placeholder.com/150',
-    bg: '#CEE8CB',
+    bg: '#7928ca26',
+    active: false,
     members: [
       {
         name: 'Name 1',
@@ -25,7 +26,8 @@ const PROJECTS_MOCKS = [
   {
     project: 'PROJECT 2',
     img: 'https://via.placeholder.com/150',
-    bg: '#CBE2E8',
+    bg: '#7928ca26',
+    active: false,
     members: [
       {
         name: 'Name 1',
@@ -48,7 +50,8 @@ const PROJECTS_MOCKS = [
   {
     project: 'PROJECT 3',
     img: 'https://via.placeholder.com/150',
-    bg: '#E8DFCB',
+    bg: '#7928ca26',
+    active: false,
     members: [
       {
         name: 'Name 1',

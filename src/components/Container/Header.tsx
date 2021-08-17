@@ -6,7 +6,9 @@ const Header: React.FC = () => {
       alignItems="center"
       justifyContent="space-between"
       paddingBottom="10px">
-      <Heading ml="5px">Vacations App</Heading>
+      <Heading ml="5px" color="#1a202c">
+        Vacations App
+      </Heading>
       <Box ml="5px">
         <Avatar
           name="Camilo Zepeda"

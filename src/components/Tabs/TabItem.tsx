@@ -3,7 +3,7 @@ import { Box, Text } from '@chakra-ui/react'
 import { TabItemProps } from './types'
 
 const TabItem: React.FC<TabItemProps> = ({ title, active, onClick }) => {
-  const borderBottom = active ? '3px solid #FF0080' : '0px solid #FF0080'
+  const borderBottom = active ? '3px solid #7928CA' : 'none'
   return (
     <Box
       flex="1"

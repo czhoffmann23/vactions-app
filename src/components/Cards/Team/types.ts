@@ -4,9 +4,11 @@ export type MembersProps = {
 }
 
 export type TeamProps = {
-  project: string
+  team: string
   img: string
   bg: string
+  active: boolean
+  total: number
   members: MembersProps[]
   onClick: () => void
 }

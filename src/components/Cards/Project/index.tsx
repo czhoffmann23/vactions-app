@@ -8,19 +8,22 @@ const Project: React.FC<ProjectProps> = ({
   members,
   bg,
   onClick,
+  active,
 }) => {
+  const bgColor = active ? '#1a202c' : bg
+  const txtColor = active ? 'white' : 'black'
   return (
     <Flex
-      bg={bg}
+      bg={bgColor}
       m="10px"
+      onClick={onClick}
+      cursor="pointer"
       flexDir={{ base: 'column', sm: 'row' }}
       h={{ base: '220px', sm: '100px' }}
       borderRadius="16px">
       <Box
         flex={{ base: '8', md: '6' }}
         d="flex"
-        onClick={onClick}
-        cursor="pointer"
         justifyContent="center"
         alignItems="center">
         <Avatar name={project} w="45px" h="45px" src={img} />
@@ -30,7 +33,7 @@ const Project: React.FC<ProjectProps> = ({
         d="flex"
         flexDir="column"
         justifyContent="center">
-        <Heading fontSize="13px" mb="10px" noOfLines={1}>
+        <Heading fontSize="13px" mb="10px" color={txtColor} noOfLines={1}>
           {project}
         </Heading>
         <AvatarGroup size="sm">
